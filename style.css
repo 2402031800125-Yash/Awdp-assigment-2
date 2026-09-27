@@ -1,0 +1,254 @@
+/* Import Modern Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* --- 1. Global & Animated Background --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    /* Crazy Animated Gradient Background */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+    color: #333;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- 2. Glassmorphism Containers (Login & Forms) --- */
+.login-container, .form-container {
+    width: 450px;
+    /* Frosted Glass Effect */
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    
+    /* Perfect Centering */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-container h2, .form-container h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* --- 3. Dashboard specific Glassmorphism --- */
+.header {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.welcome-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 40px auto;
+    width: 95%;
+    max-width: 1400px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.8);
+}
+
+.container h2 {
+    color: #222;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* --- 4. Inputs & Forms --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+input:focus, select:focus, textarea:focus {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: #23a6d5;
+    box-shadow: 0 0 10px rgba(35, 166, 213, 0.3);
+    transform: translateY(-2px);
+}
+
+/* --- 5. Beautiful Buttons --- */
+button, .btn-insert, .btn-edit, .btn-delete, .btn-logout, .btn-submit, .btn-cancel {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-submit { 
+    background: linear-gradient(45deg, #23a6d5, #23d5ab);
+    color: white; 
+    padding: 12px 15px; 
+    border-radius: 10px; 
+    width: 100%; 
+    font-size: 16px;
+    margin-top: 15px; 
+    box-shadow: 0 4px 15px rgba(35, 213, 171, 0.4);
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(35, 213, 171, 0.6);
+}
+
+.btn-cancel {
+    display: block;
+    background: rgba(255,255,255,0.4);
+    color: #333;
+    padding: 12px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.btn-cancel:hover {
+    background: rgba(255,255,255,0.7);
+}
+
+/* Dashboard Action Buttons */
+.controls { margin-bottom: 25px; }
+
+.btn-insert { 
+    background: linear-gradient(45deg, #11998e, #38ef7d); 
+    color: white; 
+    padding: 10px 20px; 
+    text-decoration: none; 
+    border-radius: 8px; 
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(56, 239, 125, 0.3);
+}
+
+.btn-edit { 
+    background: linear-gradient(45deg, #f6d365, #fda085); 
+    color: white; 
+    padding: 6px 12px; 
+    text-decoration: none; 
+    border-radius: 6px; 
+    font-size: 12px; 
+    margin-right: 5px;
+}
+
+.btn-delete { 
+    background: linear-gradient(45deg, #ff416c, #ff4b2b); 
+    color: white; 
+    padding: 6px 12px; 
+    text-decoration: none; 
+    border-radius: 6px; 
+    font-size: 12px; 
+}
+
+.btn-logout { 
+    background: rgba(255,255,255,0.2);
+    border: 1px solid white;
+    color: white; 
+    padding: 8px 20px; 
+    text-decoration: none; 
+    border-radius: 8px; 
+    font-size: 14px;
+}
+
+.btn-insert:hover, .btn-edit:hover, .btn-delete:hover {
+    transform: translateY(-2px) scale(1.05);
+}
+.btn-logout:hover {
+    background: white;
+    color: #ff416c;
+}
+
+/* --- 6. Sleek Modern Table --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: transparent;
+}
+
+th {
+    background-color: rgba(35, 166, 213, 0.1);
+    color: #333;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #23a6d5;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    color: #555;
+    transition: all 0.2s ease;
+}
+
+/* Table Row Hover Animation */
+tbody tr {
+    transition: all 0.3s ease;
+}
+
+tbody tr:hover {
+    background-color: rgba(35, 166, 213, 0.05);
+    transform: scale(1.01);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-radius: 8px;
+}
+
+tbody tr:hover td {
+    border-bottom: 1px solid transparent;
+}
